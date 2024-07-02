@@ -97,6 +97,13 @@ class AwsMarketplaceController extends Controller
                 'referral_code'=> $code,
                 'referral_used'=> !empty($request->ref_code) ? $request->ref_code : '0',
             ]);
+            if (!$user) {
+                dd("something went wrong");
+            }
+
+            AwsCustomer::where("id", $awsUser->id)->update([
+                "user_id" => $user->id
+            ]);
 
 
             Utility::getSMTPDetails(1);
@@ -110,7 +117,6 @@ class AwsMarketplaceController extends Controller
 
             $user->$userDefaultData;
             $user->userDefaultDataRegister($user->id);
-            $awsUser->assignUser($user->id);
 
             if (Utility::getValByName('verification_btn') == 'on') {
                 try {
