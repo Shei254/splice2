@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "654ada758d2cc48cf732c6afb9b1053a",
+    "content-hash": "03182a74e996da30ade2a43f540c4981",
     "packages": [
         {
             "name": "anandsiddharth/laravel-paytm-wallet",
@@ -5859,16 +5859,16 @@
         },
         {
             "name": "shei/aws-marketplace-tools",
-            "version": "1.0.11",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/shei25420/aws-marketplace-tools.git",
-                "reference": "d980015cb29066b63a1d3aab2aeb50bdc403798c"
+                "url": "git@github.com:shei25420/aws-marketplace-tools-v2.git",
+                "reference": "789aa7e09e00b62ad954981cf4413d3b3ab62f3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shei25420/aws-marketplace-tools/zipball/d980015cb29066b63a1d3aab2aeb50bdc403798c",
-                "reference": "d980015cb29066b63a1d3aab2aeb50bdc403798c",
+                "url": "https://api.github.com/repos/shei25420/aws-marketplace-tools-v2/zipball/789aa7e09e00b62ad954981cf4413d3b3ab62f3f",
+                "reference": "789aa7e09e00b62ad954981cf4413d3b3ab62f3f",
                 "shasum": ""
             },
             "require": {
@@ -5898,10 +5898,10 @@
             ],
             "description": "aws marketplace integration tools",
             "support": {
-                "source": "https://github.com/shei25420/aws-marketplace-tools/tree/1.0.11",
-                "issues": "https://github.com/shei25420/aws-marketplace-tools/issues"
+                "source": "https://github.com/shei25420/aws-marketplace-tools-v2/tree/0.0.1",
+                "issues": "https://github.com/shei25420/aws-marketplace-tools-v2/issues"
             },
-            "time": "2024-06-17T00:50:33+00:00"
+            "time": "2024-07-02T20:57:40+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
