@@ -18,6 +18,7 @@ use PHPUnit\Runner\Exception;
 use Shei\AwsMarketplaceTools\Models\AwsCustomer;
 use Shei\AwsMarketplaceTools\Models\AwsSubscription;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Log;
 
 class AwsMarketplaceController extends Controller
 {
@@ -53,11 +54,12 @@ class AwsMarketplaceController extends Controller
                 throw new \Exception("Could not find your associated aws account. Please set up your account through aws or through the app");
             }
 
+            Log::debug("Aws Customer Found");
             $awsSubscription = AwsSubscription::where("aws_customer_id", $awsUser->id)->latest()->first();
             if (!$awsSubscription) {
                 throw new \Exception("Could not find an active subscription for your account");
             }
-
+            Log::debug("Aws Customer Subscription Found");
             //Fetch Plan
             $plan = Plan::where("name", $awsSubscription->dimension)->first();
             if (!$plan) {
@@ -101,6 +103,7 @@ class AwsMarketplaceController extends Controller
                 dd("something went wrong");
             }
 
+            Log::debug("User created successfully");
             AwsCustomer::where("id", $awsUser->id)->update([
                 "user_id" => $user->id
             ]);
@@ -118,6 +121,7 @@ class AwsMarketplaceController extends Controller
             $user->$userDefaultData;
             $user->userDefaultDataRegister($user->id);
 
+            Log::debug("User updated with aws customer");
             if (Utility::getValByName('verification_btn') == 'on') {
                 try {
 
